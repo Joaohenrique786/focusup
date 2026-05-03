@@ -11,17 +11,27 @@
 
 <!-- LOGIN -->
 <div id="login">
-  <h2>🔐 Login</h2>
-  <input id="user" placeholder="Usuário">
-  <input id="pass" type="password" placeholder="Senha">
-  <button onclick="login()">Entrar</button>
+  <div class="login-box">
+    <h2>🔐 Bem-vindo ao FocusUp</h2>
+
+    <div class="input-group">
+      <label>Usuário</label>
+      <input id="user" placeholder="Digite seu usuário">
+    </div>
+
+    <div class="input-group">
+      <label>Senha</label>
+      <input id="pass" type="password" placeholder="Digite sua senha">
+    </div>
+
+    <button onclick="login()">Entrar</button>
+  </div>
 </div>
 
 <!-- APP -->
 <div class="container">
   <h1>📱 FocusUp</h1>
 
-  <!-- TAREFAS -->
   <section>
     <h2>📋 Tarefas</h2>
     <input id="taskInput" placeholder="Digite uma tarefa">
@@ -29,7 +39,6 @@
     <ul id="taskList"></ul>
   </section>
 
-  <!-- TIMER -->
   <section>
     <h2>⏱️ Timer</h2>
     <div id="timer">25:00</div>
@@ -38,7 +47,6 @@
   </section>
 </div>
 
-<!-- SOM -->
 <audio id="alarm" src="https://www.soundjay.com/buttons/beep-07.wav"></audio>
 
 <script src="script.js"></script>
