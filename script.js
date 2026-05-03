@@ -5,9 +5,7 @@ function login() {
 
   if (user === "admin" && pass === "123") {
     document.getElementById("login").style.display = "none";
-    const app = document.querySelector(".container");
-    app.style.display = "block";
-    app.style.animation = "fadeIn 0.8s";
+    document.querySelector(".container").style.display = "block";
   } else {
     alert("Login inválido");
   }
@@ -20,12 +18,6 @@ function addTask() {
 
   const li = document.createElement("li");
   li.textContent = input.value;
-  li.style.opacity = "0";
-
-  setTimeout(() => {
-    li.style.opacity = "1";
-    li.style.transition = "0.5s";
-  }, 10);
 
   li.onclick = () => li.remove();
 
@@ -65,7 +57,7 @@ function resetTimer() {
   updateTimer();
 }
 
-/* ⭐ ESTRELAS REAIS (CANVAS) */
+/* ESTRELAS */
 const canvas = document.getElementById("stars");
 const ctx = canvas.getContext("2d");
 
@@ -78,30 +70,28 @@ for (let i = 0; i < 120; i++) {
   stars.push({
     x: Math.random() * canvas.width,
     y: Math.random() * canvas.height,
-    radius: Math.random() * 1.5,
-    speed: Math.random() * 0.5
+    r: Math.random() * 1.5,
+    s: Math.random() * 0.5
   });
 }
 
-function drawStars() {
+function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-
   ctx.fillStyle = "#a855f7";
 
   stars.forEach(star => {
     ctx.beginPath();
-    ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+    ctx.arc(star.x, star.y, star.r, 0, Math.PI * 2);
     ctx.fill();
 
-    star.y += star.speed;
-
+    star.y += star.s;
     if (star.y > canvas.height) {
       star.y = 0;
       star.x = Math.random() * canvas.width;
     }
   });
 
-  requestAnimationFrame(drawStars);
+  requestAnimationFrame(draw);
 }
 
-drawStars();
+draw();
