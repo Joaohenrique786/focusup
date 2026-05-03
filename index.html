@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>FocusUp</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="login">
+  <h2>🔐 Login</h2>
+  <input id="user" placeholder="Usuário">
+  <input id="pass" type="password" placeholder="Senha">
+  <button onclick="login()">Entrar</button>
+</div>
+
+<!-- APP -->
+<div class="container">
+  <h1>📱 FocusUp</h1>
+
+  <!-- TAREFAS -->
+  <section>
+    <h2>📋 Tarefas</h2>
+    <input id="taskInput" placeholder="Digite uma tarefa">
+    <button onclick="addTask()">Adicionar</button>
+    <ul id="taskList"></ul>
+  </section>
+
+  <!-- TIMER -->
+  <section>
+    <h2>⏱️ Timer</h2>
+    <div id="timer">25:00</div>
+    <button onclick="startTimer()">Iniciar</button>
+    <button onclick="resetTimer()">Resetar</button>
+  </section>
+</div>
+
+<!-- SOM -->
+<audio id="alarm" src="https://www.soundjay.com/buttons/beep-07.wav"></audio>
+
+<script src="script.js"></script>
+
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js");
+}
+</script>
+
+</body>
+</html>
