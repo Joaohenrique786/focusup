@@ -5,7 +5,11 @@ function login() {
 
   if (user === "admin" && pass === "123") {
     document.getElementById("login").style.display = "none";
-    document.querySelector(".container").style.display = "block";
+
+    const app = document.querySelector(".container");
+    app.style.display = "block";
+    app.style.animation = "fadeIn 0.8s";
+
   } else {
     alert("Login inválido");
   }
@@ -21,7 +25,15 @@ function addTask() {
   const li = document.createElement("li");
   li.textContent = task;
 
-  li.onclick = () => li.remove();
+  setTimeout(() => {
+    li.style.opacity = "1";
+    li.style.transition = "0.5s";
+  }, 10);
+
+  li.onclick = () => {
+    li.style.opacity = "0";
+    setTimeout(() => li.remove(), 300);
+  };
 
   document.getElementById("taskList").appendChild(li);
   input.value = "";
@@ -50,9 +62,7 @@ function startTimer() {
       clearInterval(interval);
       interval = null;
 
-      // SOM 🔊
       document.getElementById("alarm").play();
-
       alert("Tempo finalizado!");
     }
   }, 1000);
