@@ -5,16 +5,47 @@ body {
   margin: 0;
 }
 
+/* LOGIN */
+#login {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-box {
+  background: rgba(30, 41, 59, 0.9);
+  padding: 30px;
+  border-radius: 20px;
+  width: 300px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  animation: fadeIn 1s;
+}
+
+.input-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.input-group label {
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+.input-group input {
+  width: 100%;
+  margin-top: 5px;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+}
+
+/* APP */
 .container {
   max-width: 400px;
   margin: auto;
   padding: 20px;
   display: none;
-}
-
-#login {
-  text-align: center;
-  margin-top: 100px;
 }
 
 h1 {
@@ -44,6 +75,8 @@ button {
   background: #38bdf8;
   cursor: pointer;
   transition: 0.3s;
+  width: 100%;
+  font-weight: bold;
 }
 
 button:hover {
@@ -65,7 +98,7 @@ li {
   margin: 5px;
   padding: 10px;
   border-radius: 10px;
-  animation: fadeIn 0.4s;
+  opacity: 0;
 }
 
 #timer {
@@ -75,8 +108,14 @@ li {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes pulse {
