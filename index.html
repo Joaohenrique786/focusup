@@ -9,13 +9,12 @@
 </head>
 <body>
 
-<!-- FUNDO ANIMADO -->
-<div class="stars"></div>
+<canvas id="stars"></canvas>
 
 <!-- LOGIN -->
 <div id="login">
   <div class="login-box">
-    <h2>✨ FocusUp</h2>
+    <h2>FocusUp ✨</h2>
 
     <div class="input-group">
       <label>Usuário</label>
@@ -33,17 +32,17 @@
 
 <!-- APP -->
 <div class="container">
-  <h1>🚀 FocusUp</h1>
+  <h1>FocusUp 🚀</h1>
 
   <section>
-    <h2>📋 Tarefas</h2>
+    <h2>Tarefas</h2>
     <input id="taskInput" placeholder="Digite uma tarefa">
     <button onclick="addTask()">Adicionar</button>
     <ul id="taskList"></ul>
   </section>
 
   <section>
-    <h2>⏱️ Timer</h2>
+    <h2>Timer</h2>
     <div id="timer">25:00</div>
     <button onclick="startTimer()">Iniciar</button>
     <button onclick="resetTimer()">Resetar</button>
