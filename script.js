@@ -1,4 +1,3 @@
-// LOGIN
 function login() {
   const user = document.getElementById("user").value;
   const pass = document.getElementById("pass").value;
@@ -9,13 +8,11 @@ function login() {
     const app = document.querySelector(".container");
     app.style.display = "block";
     app.style.animation = "fadeIn 0.8s";
-
   } else {
     alert("Login inválido");
   }
 }
 
-// TAREFAS
 function addTask() {
   const input = document.getElementById("taskInput");
   const task = input.value;
@@ -39,7 +36,6 @@ function addTask() {
   input.value = "";
 }
 
-// TIMER
 let time = 1500;
 let interval;
 
@@ -61,7 +57,6 @@ function startTimer() {
     } else {
       clearInterval(interval);
       interval = null;
-
       document.getElementById("alarm").play();
       alert("Tempo finalizado!");
     }
